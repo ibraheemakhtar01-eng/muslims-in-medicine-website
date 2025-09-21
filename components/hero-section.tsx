@@ -1,58 +1,90 @@
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Heart, Users, BookOpen } from "lucide-react"
+import { ArrowRight, Stethoscope, Users, TrendingUp } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 export function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-background to-muted py-20 lg:py-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-gradient-to-br from-background via-muted/40 to-secondary/8 py-24 lg:py-36 overflow-hidden">
+      <div className="absolute inset-0 opacity-8">
+        <div className="absolute top-20 left-10 w-40 h-40 rounded-full bg-primary/15 blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-32 h-32 rounded-full bg-secondary/15 blur-2xl"></div>
+        <div className="absolute top-1/2 left-1/3 w-24 h-24 rounded-full bg-accent/15 blur-xl"></div>
+        <div className="absolute top-1/4 right-1/4 w-20 h-20 rounded-full bg-primary/10 blur-xl"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 text-balance">
-            Muslims in Medicine
-            <span className="block text-primary">at Rutgers University</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto text-pretty">
-            Empowering Muslim students in healthcare through community, mentorship, and professional development
+          <div className="flex justify-center mb-12 animate-scale-in">
+            <div className="relative w-44 h-44 rounded-full overflow-hidden bg-white border-4 border-primary/40 shadow-2xl hover-lift ring-2 ring-primary/20 ring-offset-4 ring-offset-background">
+              <Image src="/mim-logo-new.png" alt="Muslims in Medicine Logo" fill className="object-contain p-3" />
+            </div>
+          </div>
+
+          <div className="animate-fade-in-up animate-delay-200">
+            <h1 className="text-6xl md:text-8xl font-semibold text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/80 bg-clip-text mb-6 text-balance font-sans tracking-tight drop-shadow-sm">
+              Muslims in Medicine
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-2 font-script">Empowering Muslim students</p>
+            <p className="text-2xl md:text-4xl text-muted-foreground mb-6 font-serif font-medium">
+              at Rutgers University
+            </p>
+          </div>
+
+          <p className="text-xl md:text-2xl text-muted-foreground mb-16 max-w-4xl mx-auto text-pretty animate-fade-in-up animate-delay-400 font-script text-opacity-90">
+            Building community through healthcare excellence
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20 animate-fade-in-up animate-delay-600">
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary hover:bg-primary/90 shadow-xl hover-lift font-sans font-semibold"
+            >
               <Link href="/events">
                 Join Our Events <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="shadow-xl bg-card/80 backdrop-blur-sm hover-lift font-sans font-semibold"
+            >
               <Link href="/team">Meet Our Team</Link>
             </Button>
           </div>
         </div>
 
-        {/* Feature Cards */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-card p-6 rounded-lg border border-border text-center hover:shadow-lg transition-shadow duration-300">
-            <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Heart className="h-6 w-6 text-primary" />
+        <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="bg-card/90 backdrop-blur-sm p-10 rounded-2xl border border-border text-center hover:shadow-2xl transition-all duration-500 hover-lift animate-fade-in-up animate-delay-300 glass-effect">
+            <div className="w-20 h-20 bg-primary/15 rounded-full flex items-center justify-center mx-auto mb-8">
+              <Users className="h-10 w-10 text-primary" />
             </div>
-            <h3 className="text-xl font-semibold text-card-foreground mb-2">Community</h3>
-            <p className="text-muted-foreground text-pretty">
-              Building a supportive network of Muslim healthcare professionals and students
+            <h3 className="text-2xl font-bold text-card-foreground mb-6 font-sans">Connections</h3>
+            <p className="text-muted-foreground text-pretty font-serif leading-relaxed">
+              Building meaningful relationships within the Muslim healthcare community, fostering lifelong professional
+              networks and friendships that support your journey in medicine.
             </p>
           </div>
-          <div className="bg-card p-6 rounded-lg border border-border text-center hover:shadow-lg transition-shadow duration-300">
-            <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Users className="h-6 w-6 text-secondary" />
+          <div className="bg-card/90 backdrop-blur-sm p-10 rounded-2xl border border-border text-center hover:shadow-2xl transition-all duration-500 hover-lift animate-fade-in-up animate-delay-500 glass-effect">
+            <div className="w-20 h-20 bg-secondary/15 rounded-full flex items-center justify-center mx-auto mb-8">
+              <Stethoscope className="h-10 w-10 text-secondary" />
             </div>
-            <h3 className="text-xl font-semibold text-card-foreground mb-2">Mentorship</h3>
-            <p className="text-muted-foreground text-pretty">
-              Connecting students with experienced professionals for guidance and support
+            <h3 className="text-2xl font-bold text-card-foreground mb-6 font-sans">Guidance & Support</h3>
+            <p className="text-muted-foreground text-pretty font-serif leading-relaxed">
+              Providing mentorship from experienced Muslim healthcare professionals, academic support, and emotional
+              guidance to help navigate the challenges of medical education and career development.
             </p>
           </div>
-          <div className="bg-card p-6 rounded-lg border border-border text-center hover:shadow-lg transition-shadow duration-300">
-            <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <BookOpen className="h-6 w-6 text-accent" />
+          <div className="bg-card/90 backdrop-blur-sm p-10 rounded-2xl border border-border text-center hover:shadow-2xl transition-all duration-500 hover-lift animate-fade-in-up animate-delay-700 glass-effect">
+            <div className="w-20 h-20 bg-accent/15 rounded-full flex items-center justify-center mx-auto mb-8">
+              <TrendingUp className="h-10 w-10 text-accent" />
             </div>
-            <h3 className="text-xl font-semibold text-card-foreground mb-2">Education</h3>
-            <p className="text-muted-foreground text-pretty">
-              Providing resources and opportunities for academic and professional growth
+            <h3 className="text-2xl font-bold text-card-foreground mb-6 font-sans">Professional Growth</h3>
+            <p className="text-muted-foreground text-pretty font-serif leading-relaxed">
+              Offering workshops, seminars, and resources focused on career advancement, skill development, and
+              leadership opportunities in healthcare fields including medicine, dentistry, pharmacy, and public health.
             </p>
           </div>
         </div>

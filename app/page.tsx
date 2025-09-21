@@ -1,204 +1,183 @@
 import { Navbar } from "@/components/navbar"
 import { HeroSection } from "@/components/hero-section"
-import { EventCard } from "@/components/event-card"
-import { TeamCard } from "@/components/team-card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { Heart, Users, BookOpen, Instagram } from "lucide-react"
+import { Users, Instagram, Mail, MessageSquare, HelpCircle, Stethoscope, Activity, Microscope } from "lucide-react"
 import Image from "next/image"
-
-const upcomingEvents = [
-  {
-    id: "1",
-    title: "General Body Meeting",
-    date: "September 24, 2024",
-    time: "7:30 PM",
-    location: "Tillet Hall, Livingston Campus",
-    description:
-      "Join us for our first general body meeting of the semester. Learn about upcoming events, meet fellow members, and discover opportunities to get involved.",
-    category: "Meeting",
-  },
-  {
-    id: "2",
-    title: "Heart of Care: What it Means to be a Muslim in Healthcare",
-    date: "September 30, 2024",
-    time: "7:00 PM",
-    location: "Livingston Gathering Lounge",
-    description:
-      "A collaborative event with Ashrafiyya exploring the intersection of faith and healthcare. Hear from Muslim healthcare professionals about their experiences.",
-    category: "Panel Discussion",
-  },
-]
-
-const featuredMembers = [
-  {
-    name: "Zubaida Khan",
-    role: "President",
-    year: "Senior",
-    major: "Biology",
-    bio: "Leading Muslims in Medicine with passion for community building and supporting students in healthcare fields.",
-    email: "muslimsinmedicine.rutgers@gmail.com",
-    image: "/professional-woman-headshot.png",
-  },
-  {
-    name: "Ahmed Youssef",
-    role: "Vice President",
-    year: "Junior",
-    major: "Pre-Medicine",
-    bio: "Dedicated to organizing academic workshops and mentorship programs for aspiring healthcare professionals.",
-    email: "muslimsinmedicine.rutgers@gmail.com",
-    image: "/professional-man-headshot.png",
-  },
-  {
-    name: "Hoorain Fatima",
-    role: "Vice President",
-    year: "Junior",
-    major: "Public Health",
-    bio: "Focused on community outreach and creating meaningful connections within the Muslim healthcare community.",
-    email: "muslimsinmedicine.rutgers@gmail.com",
-    image: "/professional-woman-headshot.png",
-  },
-]
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background">
       <Navbar />
       <HeroSection />
 
-      {/* About Us section */}
-      <section className="py-16 bg-muted/30">
+      {/* About Us section - More thorough */}
+      <section className="py-20 bg-gradient-to-r from-muted/20 via-background to-muted/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="flex justify-center mb-6">
-              <div className="relative w-24 h-24 rounded-full overflow-hidden bg-white border-4 border-primary/20 shadow-lg">
+          <div className="text-center mb-16 animate-fade-in-up">
+            <div className="flex justify-center mb-8">
+              <div className="relative w-28 h-28 rounded-full overflow-hidden bg-white border-4 border-primary/30 shadow-2xl">
                 <Image src="/mim-logo-new.png" alt="Muslims in Medicine Logo" fill className="object-contain p-2" />
               </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 font-sans">About Muslims in Medicine</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 font-sans">About Muslims in Medicine</h2>
+            <div className="max-w-4xl mx-auto space-y-6 text-lg text-muted-foreground font-serif leading-relaxed">
+              <p className="text-pretty">
+                Muslims in Medicine (MiM) at Rutgers University is a vibrant student organization founded in 2024 with a
+                clear mission: to support and empower Muslim students pursuing careers in healthcare. We create a
+                supportive community that bridges faith and professional aspirations.
+              </p>
+              <p className="text-pretty">
+                Our organization welcomes students from all healthcare disciplines, including pre-medicine, dentistry,
+                pharmacy, nursing, public health, and any health-related field. Through mentorship programs,
+                professional development workshops, and networking events, MiM provides the resources necessary for
+                academic success and career advancement while maintaining Islamic values.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            <div className="text-center p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:shadow-lg transition-all duration-300 animate-fade-in-up animate-delay-200">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Stethoscope className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-card-foreground mb-2 font-sans">Medical Excellence</h3>
+              <p className="text-muted-foreground text-pretty font-serif text-sm">
+                Supporting pre-med students with MCAT prep, application guidance, and clinical experience opportunities.
+              </p>
+            </div>
+
+            <div className="text-center p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:shadow-lg transition-all duration-300 animate-fade-in-up animate-delay-400">
+              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Activity className="w-8 h-8 text-secondary" />
+              </div>
+              <h3 className="text-xl font-semibold text-card-foreground mb-2 font-sans">Healthcare Diversity</h3>
+              <p className="text-muted-foreground text-pretty font-serif text-sm">
+                Embracing all healthcare fields including dentistry, pharmacy, nursing, and public health.
+              </p>
+            </div>
+
+            <div className="text-center p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:shadow-lg transition-all duration-300 animate-fade-in-up animate-delay-600">
+              <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-accent" />
+              </div>
+              <h3 className="text-xl font-semibold text-card-foreground mb-2 font-sans">Community Impact</h3>
+              <p className="text-muted-foreground text-pretty font-serif text-sm">
+                Organizing health fairs and community service to give back while gaining valuable experience.
+              </p>
+            </div>
+
+            <div className="text-center p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:shadow-lg transition-all duration-300 animate-fade-in-up animate-delay-800">
+              <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Microscope className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="text-xl font-semibold text-card-foreground mb-2 font-sans">Research & Innovation</h3>
+              <p className="text-muted-foreground text-pretty font-serif text-sm">
+                Connecting students with research opportunities and encouraging innovation in healthcare.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-gradient-to-br from-muted/30 to-background">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate-fade-in-up">
+            <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <HelpCircle className="w-8 h-8 text-secondary" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 font-sans">Questions & Feedback</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty font-serif">
-              Established in 2024 at Rutgers University, Muslims in Medicine is dedicated to supporting Muslim students
-              pursuing careers in healthcare
+              Have questions about our club, suggestions for events, or ideas for website improvements? We'd love to
+              hear from you!
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center p-6 bg-card rounded-lg border border-border">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="w-6 h-6 text-primary" />
+          <div className="bg-card/80 backdrop-blur-sm rounded-2xl border border-border p-8 shadow-xl animate-fade-in-up animate-delay-200">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold text-card-foreground font-sans mb-4">
+                  Frequently Asked Questions
+                </h3>
+                <div className="space-y-3 text-muted-foreground font-serif">
+                  <p className="text-pretty">• What healthcare fields does MiM support?</p>
+                  <p className="text-pretty">• How can I get involved in club activities?</p>
+                  <p className="text-pretty">• Are there mentorship opportunities available?</p>
+                  <p className="text-pretty">• What events do you host throughout the year?</p>
+                  <p className="text-pretty">• How can I connect with Muslim healthcare professionals?</p>
+                </div>
               </div>
-              <h3 className="text-xl font-semibold text-card-foreground mb-2 font-sans">Our Mission</h3>
-              <p className="text-muted-foreground text-pretty font-serif">
-                To guide and support Muslim students in all healthcare fields including pre-med, dental, pharmacy, and
-                other health-related disciplines.
-              </p>
+              <div className="space-y-4">
+                <h3 className="text-2xl font-semibold text-card-foreground font-sans mb-4">Share Your Thoughts</h3>
+                <div className="space-y-3 text-muted-foreground font-serif">
+                  <p className="text-pretty">• Suggest new events or workshops</p>
+                  <p className="text-pretty">• Request website features or improvements</p>
+                  <p className="text-pretty">• Share feedback about club activities</p>
+                  <p className="text-pretty">• Ask questions about healthcare careers</p>
+                  <p className="text-pretty">• Connect with our leadership team</p>
+                </div>
+              </div>
             </div>
 
-            <div className="text-center p-6 bg-card rounded-lg border border-border">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-6 h-6 text-primary" />
+            <div className="text-center">
+              <div className="flex items-center justify-center space-x-2 mb-4">
+                <Mail className="w-6 h-6 text-primary" />
+                <span className="text-lg font-semibold text-card-foreground font-sans">Get in Touch</span>
               </div>
-              <h3 className="text-xl font-semibold text-card-foreground mb-2 font-sans">Community</h3>
-              <p className="text-muted-foreground text-pretty font-serif">
-                Building a strong network of Muslim healthcare professionals and students who support each other's
-                academic and professional growth.
+              <p className="text-muted-foreground mb-6 font-serif">
+                Send us your questions, suggestions, or feedback and we'll get back to you soon!
               </p>
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 shadow-lg">
+                <a href="mailto:muslimsinmedicine.rutgers@gmail.com?subject=Question/Feedback for MiM">
+                  <MessageSquare className="mr-2 h-5 w-5" />
+                  Send Us Your Questions
+                </a>
+              </Button>
             </div>
-
-            <div className="text-center p-6 bg-card rounded-lg border border-border">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <BookOpen className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-xl font-semibold text-card-foreground mb-2 font-sans">Resources</h3>
-              <p className="text-muted-foreground text-pretty font-serif">
-                Providing mentorship, study groups, networking opportunities, and guidance for students navigating their
-                healthcare journey.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Upcoming Events Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 font-sans">Upcoming Events</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty font-serif">
-              Join us for workshops, networking events, and community gatherings
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            {upcomingEvents.map((event) => (
-              <EventCard key={event.id} event={event} />
-            ))}
-          </div>
-          <div className="text-center">
-            <Button asChild variant="outline" size="lg">
-              <Link href="/events">View All Events</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Team Members */}
-      <section className="py-16 bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 font-sans">Meet Our Team</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty font-serif">
-              Dedicated students working to build a stronger community
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-            {featuredMembers.map((member, index) => (
-              <TeamCard key={index} member={member} />
-            ))}
-          </div>
-          <div className="text-center">
-            <Button asChild variant="outline" size="lg">
-              <Link href="/team">Meet Everyone</Link>
-            </Button>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-card border-t border-border py-12">
+      <footer className="bg-gradient-to-r from-card/80 to-muted/40 backdrop-blur-sm border-t border-border py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="relative w-10 h-10 rounded-full overflow-hidden bg-white border-2 border-primary/20">
+            <div className="animate-fade-in-up">
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="relative w-10 h-10 rounded-full overflow-hidden bg-white border-2 border-primary/30 shadow-lg">
                   <Image src="/mim-logo-new.png" alt="Muslims in Medicine Logo" fill className="object-contain p-1" />
                 </div>
-                <span className="font-bold text-lg text-card-foreground font-sans">Muslims in Medicine</span>
+                <span className="font-semibold text-lg text-card-foreground font-sans">Muslims in Medicine</span>
               </div>
-              <p className="text-muted-foreground text-pretty font-serif">
+              <p className="text-muted-foreground text-pretty font-serif leading-relaxed text-sm">
                 Empowering Muslim students in healthcare through community, mentorship, and professional development at
                 Rutgers University.
               </p>
             </div>
-            <div>
-              <h3 className="font-semibold text-card-foreground mb-4 font-sans">Quick Links</h3>
+            <div className="animate-fade-in-up animate-delay-200">
+              <h3 className="font-semibold text-card-foreground mb-4 font-sans text-base">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
                   <Link
                     href="/events"
-                    className="text-muted-foreground hover:text-primary transition-colors font-serif"
+                    className="text-muted-foreground hover:text-primary transition-colors font-serif text-sm"
                   >
                     Events
                   </Link>
                 </li>
                 <li>
-                  <Link href="/team" className="text-muted-foreground hover:text-primary transition-colors font-serif">
+                  <Link
+                    href="/team"
+                    className="text-muted-foreground hover:text-primary transition-colors font-serif text-sm"
+                  >
                     Team
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/resources"
-                    className="text-muted-foreground hover:text-primary transition-colors font-serif"
+                    className="text-muted-foreground hover:text-primary transition-colors font-serif text-sm"
                   >
                     Resources
                   </Link>
@@ -206,36 +185,36 @@ export default function HomePage() {
                 <li>
                   <Link
                     href="/contact"
-                    className="text-muted-foreground hover:text-primary transition-colors font-serif"
+                    className="text-muted-foreground hover:text-primary transition-colors font-serif text-sm"
                   >
                     Contact
                   </Link>
                 </li>
               </ul>
             </div>
-            <div>
-              <h3 className="font-semibold text-card-foreground mb-4 font-sans">Contact Info</h3>
-              <p className="text-muted-foreground mb-2 font-serif">Rutgers University</p>
-              <p className="text-muted-foreground mb-2 font-serif">New Brunswick, NJ</p>
-              <p className="text-muted-foreground mb-4 font-serif">muslimsinmedicine.rutgers@gmail.com</p>
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
+            <div className="animate-fade-in-up animate-delay-400">
+              <h3 className="font-semibold text-card-foreground mb-4 font-sans text-base">Contact Info</h3>
+              <p className="text-muted-foreground mb-1 font-serif text-sm">Rutgers University</p>
+              <p className="text-muted-foreground mb-1 font-serif text-sm">New Brunswick, NJ</p>
+              <p className="text-muted-foreground mb-4 font-serif text-sm">muslimsinmedicine.rutgers@gmail.com</p>
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 bg-secondary rounded-full flex items-center justify-center shadow-lg">
                   <Instagram className="h-4 w-4 text-white" />
                 </div>
                 <a
                   href="https://www.instagram.com/mim.rutgers/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary hover:text-primary/80 transition-colors font-medium font-sans"
+                  className="text-primary hover:text-primary/80 transition-colors font-medium font-sans text-sm"
                 >
                   @mim.rutgers
                 </a>
               </div>
             </div>
           </div>
-          <div className="border-t border-border mt-8 pt-8 text-center">
-            <p className="text-muted-foreground font-serif">
-              © 2024 Muslims in Medicine at Rutgers University. All rights reserved.
+          <div className="border-t border-border mt-8 pt-6 text-center">
+            <p className="text-muted-foreground font-serif text-xs">
+              © 2025 Muslims in Medicine at Rutgers University. All rights reserved.
             </p>
           </div>
         </div>

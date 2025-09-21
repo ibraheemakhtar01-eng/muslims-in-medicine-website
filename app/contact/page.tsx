@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, MapPin, Instagram } from "lucide-react"
+import { Mail, MapPin, Instagram, MessageSquare } from "lucide-react"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -153,13 +153,29 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
+                    <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <MessageSquare className="h-5 w-5 text-accent" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-card-foreground font-sans">GroupMe</h3>
+                      <a
+                        href="https://groupme.com/join_group/102910901/g8DYe0eS"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-accent hover:text-accent/80 transition-colors font-medium font-serif text-sm"
+                      >
+                        Join our group chat
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-4">
                     <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
                       <Instagram className="h-5 w-5 text-primary" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-card-foreground font-sans">Follow Us</h3>
                       <div className="flex items-center space-x-2 mt-1">
-                        <div className="w-6 h-6 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full flex items-center justify-center">
+                        <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
                           <Instagram className="h-3 w-3 text-white" />
                         </div>
                         <a
@@ -185,8 +201,14 @@ export default function ContactPage() {
                     Interested in joining Muslims in Medicine? We welcome all students passionate about healthcare and
                     community service.
                   </p>
-                  <Button className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-                    Join MiM Today
+                  <Button asChild className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground">
+                    <a
+                      href="https://groupme.com/join_group/102910901/g8DYe0eS"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Join MiM Today
+                    </a>
                   </Button>
                 </CardContent>
               </Card>

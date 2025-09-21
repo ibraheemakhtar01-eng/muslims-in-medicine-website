@@ -18,14 +18,16 @@ export function Navbar() {
   ]
 
   return (
-    <nav className="bg-background border-b border-border sticky top-0 z-50">
+    <nav className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="relative w-12 h-12 rounded-full overflow-hidden bg-white border-2 border-primary/20">
+          <Link href="/" className="flex items-center space-x-3 animate-slide-in-left">
+            <div className="relative w-14 h-14 rounded-full overflow-hidden bg-white border-3 border-primary/30 shadow-lg">
               <Image src="/mim-logo-new.png" alt="Muslims in Medicine Logo" fill className="object-contain p-1" />
             </div>
-            <span className="font-bold text-xl text-foreground font-sans">Muslims in Medicine</span>
+            <span className="font-semibold text-xl text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/80 bg-clip-text font-sans drop-shadow-sm">
+              Muslims in Medicine
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -43,7 +45,7 @@ export function Navbar() {
               href="https://www.instagram.com/mim.rutgers/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 bg-pink-600 text-white px-3 py-2 rounded-full hover:bg-pink-700 transition-colors duration-200 font-medium shadow-md"
+              className="flex items-center space-x-2 bg-secondary text-secondary-foreground px-4 py-2 rounded-full hover:bg-secondary/90 transition-all duration-200 font-medium shadow-md hover-lift"
             >
               <Instagram className="h-4 w-4" />
               <span className="font-sans">Follow Us</span>
@@ -61,7 +63,7 @@ export function Navbar() {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-card border-t border-border">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-card/80 backdrop-blur-sm border-t border-border glass-effect">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -76,7 +78,7 @@ export function Navbar() {
                 href="https://www.instagram.com/mim.rutgers/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center space-x-2 mx-3 my-2 bg-pink-600 text-white px-3 py-2 rounded-full hover:bg-pink-700 transition-colors duration-200 font-medium shadow-md"
+                className="flex items-center space-x-2 mx-3 my-2 bg-secondary text-secondary-foreground px-3 py-2 rounded-full hover:bg-secondary/90 transition-all duration-200 font-medium shadow-md"
                 onClick={() => setIsOpen(false)}
               >
                 <Instagram className="h-4 w-4" />
