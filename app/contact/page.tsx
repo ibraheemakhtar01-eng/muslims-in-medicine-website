@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, MapPin, Instagram, MessageSquare } from "lucide-react"
+import { Mail, Instagram, MessageSquare, ChevronDown, ChevronUp } from "lucide-react"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -18,10 +18,25 @@ export default function ContactPage() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
+
+    // Create mailto link with form data
+    const subject = encodeURIComponent(formData.subject)
+    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)
+    const mailtoLink = `mailto:muslimsinmedicine.rutgers@gmail.com?subject=${subject}&body=${body}`
+
+    window.location.href = mailtoLink
+
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    })
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -30,6 +45,33 @@ export default function ContactPage() {
       [e.target.name]: e.target.value,
     })
   }
+
+  const faqs = [
+    {
+      question: "Who can join Muslims in Medicine?",
+      answer:
+        "Any student interested in healthcare fields is welcome! You don't need to be Muslim or pre-med to join our community.",
+    },
+    {
+      question: "What events do you organize?",
+      answer:
+        "We host panel discussions, networking events, study sessions, community service projects, and social gatherings throughout the semester.",
+    },
+    {
+      question: "Are there membership fees?",
+      answer: "No, membership is completely free! We believe in making our community accessible to all students.",
+    },
+    {
+      question: "How can I get involved in leadership?",
+      answer:
+        "We hold elections each spring semester. Stay active in our events and GroupMe to learn about leadership opportunities.",
+    },
+    {
+      question: "Do you offer mentorship programs?",
+      answer:
+        "Yes! We connect underclassmen with upperclassmen and recent graduates in healthcare fields for guidance and support.",
+    },
+  ]
 
   return (
     <div className="min-h-screen bg-background">
@@ -54,7 +96,7 @@ export default function ContactPage() {
             {/* Contact Form */}
             <Card className="border-border">
               <CardHeader>
-                <CardTitle className="text-2xl text-card-foreground">Send us a message</CardTitle>
+                <CardTitle className="text-2xl text-card-foreground">Send us your questions</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -123,7 +165,7 @@ export default function ContactPage() {
               </CardContent>
             </Card>
 
-            {/* Contact Information */}
+            {/* Contact Information and FAQ */}
             <div className="space-y-8">
               <Card className="border-border">
                 <CardHeader>
@@ -141,20 +183,7 @@ export default function ContactPage() {
                   </div>
                   <div className="flex items-start space-x-4">
                     <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <MapPin className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-card-foreground">Location</h3>
-                      <p className="text-muted-foreground">
-                        Rutgers University
-                        <br />
-                        New Brunswick, NJ
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <div className="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <MessageSquare className="h-5 w-5 text-accent" />
+                      <MessageSquare className="h-5 w-5 text-primary" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-card-foreground font-sans">GroupMe</h3>
@@ -162,15 +191,15 @@ export default function ContactPage() {
                         href="https://groupme.com/join_group/102910901/g8DYe0eS"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-accent hover:text-accent/80 transition-colors font-medium font-serif text-sm"
+                        className="text-primary hover:text-primary/80 transition-colors font-medium font-serif text-sm"
                       >
-                        Join our group chat
+                        Join for updates
                       </a>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
-                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Instagram className="h-5 w-5 text-primary" />
+                    <div className="w-10 h-10 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Instagram className="h-5 w-5 text-secondary" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-card-foreground font-sans">Follow Us</h3>
@@ -189,6 +218,32 @@ export default function ContactPage() {
                       </div>
                     </div>
                   </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-border">
+                <CardHeader>
+                  <CardTitle className="text-xl text-card-foreground">Frequently Asked Questions</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  {faqs.map((faq, index) => (
+                    <div key={index} className="border-b border-border/50 pb-4 last:border-b-0">
+                      <button
+                        onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
+                        className="flex items-center justify-between w-full text-left"
+                      >
+                        <h4 className="font-medium text-card-foreground text-sm">{faq.question}</h4>
+                        {expandedFaq === index ? (
+                          <ChevronUp className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+                        ) : (
+                          <ChevronDown className="h-4 w-4 text-muted-foreground flex-shrink-0" />
+                        )}
+                      </button>
+                      {expandedFaq === index && (
+                        <p className="text-muted-foreground text-sm mt-2 text-pretty leading-relaxed">{faq.answer}</p>
+                      )}
+                    </div>
+                  ))}
                 </CardContent>
               </Card>
 

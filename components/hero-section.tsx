@@ -16,22 +16,20 @@ export function HeroSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="text-center">
           <div className="flex justify-center mb-12 animate-scale-in">
-            <div className="relative w-44 h-44 rounded-full overflow-hidden bg-white border-4 border-primary/40 shadow-2xl hover-lift ring-2 ring-primary/20 ring-offset-4 ring-offset-background">
+            <div className="relative w-48 h-48 rounded-full overflow-hidden bg-white border-4 border-primary/30 shadow-2xl hover-lift ring-4 ring-primary/15 ring-offset-4 ring-offset-background">
               <Image src="/mim-logo-new.png" alt="Muslims in Medicine Logo" fill className="object-contain p-3" />
             </div>
           </div>
 
           <div className="animate-fade-in-up animate-delay-200">
-            <h1 className="text-6xl md:text-8xl font-semibold text-transparent bg-gradient-to-r from-primary via-primary/90 to-primary/80 bg-clip-text mb-6 text-balance font-sans tracking-tight drop-shadow-sm">
+            <h1 className="text-6xl md:text-8xl font-semibold text-transparent bg-gradient-to-r from-primary via-primary/95 to-primary/85 bg-clip-text mb-4 text-balance font-sans tracking-tight drop-shadow-lg">
               Muslims in Medicine
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-2 font-script">Empowering Muslim students</p>
-            <p className="text-2xl md:text-4xl text-muted-foreground mb-6 font-serif font-medium">
-              at Rutgers University
-            </p>
+            <p className="text-2xl md:text-4xl text-secondary font-serif font-medium mb-2">at Rutgers University</p>
+            <p className="text-lg md:text-xl text-secondary/90 mb-6 font-serif">Empowering Muslim students</p>
           </div>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-16 max-w-4xl mx-auto text-pretty animate-fade-in-up animate-delay-400 font-script text-opacity-90">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-16 max-w-4xl mx-auto text-pretty animate-fade-in-up animate-delay-400 font-serif text-opacity-90">
             Building community through healthcare excellence
           </p>
 

@@ -5,7 +5,7 @@ const allEvents = [
   {
     id: "1",
     title: "General Body Meeting",
-    date: "September 24, 2024",
+    date: "January 28, 2025",
     time: "7:30 PM",
     location: "Tillet Hall, Livingston Campus",
     description:
@@ -15,7 +15,7 @@ const allEvents = [
   {
     id: "2",
     title: "Heart of Care: What it Means to be a Muslim in Healthcare",
-    date: "September 30, 2024",
+    date: "February 15, 2025",
     time: "7:00 PM",
     location: "Livingston Gathering Lounge",
     description:
