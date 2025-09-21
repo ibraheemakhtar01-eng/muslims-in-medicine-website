@@ -22,15 +22,14 @@ export function HeroSection() {
           </div>
 
           <div className="animate-fade-in-up animate-delay-200">
-            <h1 className="text-6xl md:text-8xl font-semibold text-transparent bg-gradient-to-r from-primary via-primary/95 to-primary/85 bg-clip-text mb-4 text-balance font-sans tracking-tight drop-shadow-lg">
+            <h1 className="text-6xl md:text-8xl font-bold text-transparent bg-gradient-to-r from-primary via-primary/95 to-primary/85 bg-clip-text mb-4 text-balance font-sans tracking-tight drop-shadow-lg">
               Muslims in Medicine
             </h1>
-            <p className="text-2xl md:text-4xl text-secondary font-serif font-medium mb-2">at Rutgers University</p>
-            <p className="text-lg md:text-xl text-secondary/90 mb-6 font-serif">Empowering Muslim students</p>
+            <p className="text-2xl md:text-4xl text-secondary font-serif font-semibold mb-8">at Rutgers University</p>
           </div>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-16 max-w-4xl mx-auto text-pretty animate-fade-in-up animate-delay-400 font-serif text-opacity-90">
-            Building community through healthcare excellence
+            Empowering Muslim students in healthcare through connections, professional growth, guidance and support
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20 animate-fade-in-up animate-delay-600">
@@ -45,9 +44,9 @@ export function HeroSection() {
             </Button>
             <Button
               asChild
-              variant="outline"
+              variant="default"
               size="lg"
-              className="shadow-xl bg-card/80 backdrop-blur-sm hover-lift font-sans font-semibold"
+              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-xl hover-lift font-sans font-semibold"
             >
               <Link href="/team">Meet Our Team</Link>
             </Button>

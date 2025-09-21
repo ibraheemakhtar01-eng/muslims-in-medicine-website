@@ -3,16 +3,14 @@
 import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Mail, Linkedin } from "lucide-react"
+import { Mail } from "lucide-react"
 
 interface TeamMember {
   name: string
   role: string
   year: string
-  major: string
+  email: string
   bio: string
-  email?: string
-  linkedin?: string
   image: string
 }
 
@@ -47,36 +45,22 @@ export function TeamCard({ member }: TeamCardProps) {
               {member.role}
             </Badge>
             <p className="text-muted-foreground text-sm">{member.year}</p>
-            <p className="text-muted-foreground text-sm">{member.major}</p>
           </CardContent>
         </Card>
 
-        {/* Back of card */}
         <Card className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 border-border bg-primary/5">
-          <CardContent className="p-6 flex flex-col justify-between h-full">
-            <div>
-              <h3 className="text-lg font-semibold text-card-foreground mb-3">{member.name}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed text-pretty">{member.bio}</p>
-            </div>
-            <div className="flex gap-2 mt-4">
-              {member.email && (
+          <CardContent className="p-6 flex flex-col justify-center items-center text-center h-full">
+            <h3 className="text-lg font-semibold text-card-foreground mb-4">{member.name}</h3>
+            <div className="space-y-3">
+              <div className="flex items-center justify-center space-x-2">
+                <Mail className="h-4 w-4 text-primary" />
                 <a
                   href={`mailto:${member.email}`}
-                  className="p-2 bg-primary/10 rounded-full hover:bg-primary/20 transition-colors"
+                  className="text-primary hover:text-primary/80 transition-colors text-sm"
                 >
-                  <Mail className="h-4 w-4 text-primary" />
+                  {member.email}
                 </a>
-              )}
-              {member.linkedin && (
-                <a
-                  href={member.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 bg-primary/10 rounded-full hover:bg-primary/20 transition-colors"
-                >
-                  <Linkedin className="h-4 w-4 text-primary" />
-                </a>
-              )}
+              </div>
             </div>
           </CardContent>
         </Card>

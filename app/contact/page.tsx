@@ -198,24 +198,19 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
-                    <div className="w-10 h-10 bg-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Instagram className="h-5 w-5 text-secondary" />
+                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Instagram className="h-5 w-5 text-green-600" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-card-foreground font-sans">Follow Us</h3>
-                      <div className="flex items-center space-x-2 mt-1">
-                        <div className="w-6 h-6 bg-secondary rounded-full flex items-center justify-center">
-                          <Instagram className="h-3 w-3 text-white" />
-                        </div>
-                        <a
-                          href="https://www.instagram.com/mim.rutgers/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-primary hover:text-primary/80 transition-colors font-medium font-serif"
-                        >
-                          @mim.rutgers
-                        </a>
-                      </div>
+                      <a
+                        href="https://www.instagram.com/mim.rutgers/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary hover:text-primary/80 transition-colors font-medium font-serif"
+                      >
+                        @mim.rutgers
+                      </a>
                     </div>
                   </div>
                 </CardContent>

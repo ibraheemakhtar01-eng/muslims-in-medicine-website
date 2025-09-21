@@ -5,19 +5,19 @@ const allEvents = [
   {
     id: "1",
     title: "General Body Meeting",
-    date: "January 28, 2025",
+    date: "September 24, 2025",
     time: "7:30 PM",
-    location: "Tillet Hall, Livingston Campus",
+    location: "Tillet Hall Room 264",
     description:
       "Join us for our first general body meeting of the semester. Learn about upcoming events, meet fellow members, and discover opportunities to get involved in Muslims in Medicine.",
     category: "Meeting",
   },
   {
     id: "2",
-    title: "Heart of Care: What it Means to be a Muslim in Healthcare",
-    date: "February 15, 2025",
+    title: "Ashrafiyya: Heart of Care",
+    date: "September 30, 2025",
     time: "7:00 PM",
-    location: "Livingston Gathering Lounge",
+    location: "RWJ Medical School, Piscataway Busch Campus",
     description:
       "A collaborative event with Ashrafiyya exploring the intersection of faith and healthcare. Hear from Muslim healthcare professionals about their experiences and insights.",
     category: "Panel Discussion",
@@ -46,8 +46,8 @@ export default function EventsPage() {
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {allEvents.map((event, index) => (
-              <div key={event.id} className={`animate-fade-in-up ${index === 1 ? "animate-delay-200" : ""}`}>
+            {allEvents.map((event) => (
+              <div key={event.id}>
                 <EventCard event={event} />
               </div>
             ))}
