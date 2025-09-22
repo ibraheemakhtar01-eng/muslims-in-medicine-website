@@ -37,7 +37,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            <div className="text-center p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:shadow-lg transition-all duration-300 animate-fade-in-up animate-delay-200">
+            <div className="text-center p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:shadow-lg transition-all duration-300">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Stethoscope className="w-8 h-8 text-primary" />
               </div>
@@ -47,7 +47,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="text-center p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:shadow-lg transition-all duration-300 animate-fade-in-up animate-delay-400">
+            <div className="text-center p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:shadow-lg transition-all duration-300">
               <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Activity className="w-8 h-8 text-secondary" />
               </div>
@@ -57,7 +57,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="text-center p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:shadow-lg transition-all duration-300 animate-fade-in-up animate-delay-600">
+            <div className="text-center p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:shadow-lg transition-all duration-300">
               <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-accent" />
               </div>
@@ -67,7 +67,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="text-center p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:shadow-lg transition-all duration-300 animate-fade-in-up animate-delay-800">
+            <div className="text-center p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:shadow-lg transition-all duration-300">
               <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Microscope className="w-8 h-8 text-primary" />
               </div>
@@ -94,7 +94,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="bg-card/80 backdrop-blur-sm rounded-2xl border border-border p-8 shadow-xl animate-fade-in-up animate-delay-200">
+          <div className="bg-card/80 backdrop-blur-sm rounded-2xl border border-border p-8 shadow-xl animate-fade-in-up">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div className="space-y-4">
                 <h3 className="text-2xl font-semibold text-card-foreground font-sans mb-4">

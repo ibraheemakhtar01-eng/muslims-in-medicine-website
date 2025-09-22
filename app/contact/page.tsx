@@ -74,15 +74,15 @@ export default function ContactPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background">
       <Navbar />
 
       {/* Header */}
-      <section className="bg-gradient-to-br from-background to-muted py-16">
+      <section className="bg-gradient-to-br from-background via-muted/30 to-primary/5 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Contact Us</h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
+          <div className="text-center animate-fade-in-up">
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 font-sans">Contact Us</h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty font-serif">
               Get in touch with us for questions, suggestions, or to learn more about joining our community
             </p>
           </div>
@@ -90,7 +90,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Content */}
-      <section className="py-16">
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
@@ -198,8 +198,8 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">
-                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Instagram className="h-5 w-5 text-green-600" />
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Instagram className="h-5 w-5 text-primary" />
                     </div>
                     <div>
                       <h3 className="font-semibold text-card-foreground font-sans">Follow Us</h3>
