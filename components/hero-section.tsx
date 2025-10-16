@@ -1,91 +1,142 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Stethoscope, Users, TrendingUp } from "lucide-react"
+import { Stethoscope, Users, TrendingUp } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 export function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-background via-muted/40 to-secondary/8 py-24 lg:py-36 overflow-hidden">
-      <div className="absolute inset-0 opacity-8">
-        <div className="absolute top-20 left-10 w-40 h-40 rounded-full bg-primary/15 blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-32 h-32 rounded-full bg-secondary/15 blur-2xl"></div>
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 rounded-full bg-accent/15 blur-xl"></div>
-        <div className="absolute top-1/4 right-1/4 w-20 h-20 rounded-full bg-primary/10 blur-xl"></div>
-      </div>
+    <>
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+        {/* Blue watercolor background */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/blue-watercolor-bg.jpg"
+            alt="Blue watercolor background"
+            fill
+            className="object-cover opacity-90"
+            priority
+          />
+          {/* Overlay for better text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-50/40 via-blue-100/30 to-blue-50/40" />
+        </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="text-center">
-          <div className="flex justify-center mb-12 animate-scale-in">
-            <div className="relative w-48 h-48 rounded-full overflow-hidden bg-white border-4 border-primary/30 shadow-2xl hover-lift ring-4 ring-primary/15 ring-offset-4 ring-offset-background">
-              <Image src="/mim-logo-new.png" alt="Muslims in Medicine Logo" fill className="object-contain p-3" />
+        {/* Content */}
+        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          {/* Bismillah Calligraphy */}
+          <motion.div
+            initial={{ opacity: 0, y: -30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="mb-8 flex justify-center"
+          >
+            <div className="relative w-[280px] h-[100px] sm:w-[400px] sm:h-[140px] md:w-[500px] md:h-[180px]">
+              <Image
+                src="/bismillah-calligraphy.png"
+                alt="Bismillah ir-Rahman ir-Rahim"
+                fill
+                className="object-contain drop-shadow-sm"
+                priority
+              />
             </div>
-          </div>
+          </motion.div>
 
-          <div className="animate-fade-in-up animate-delay-200">
-            <h1 className="text-6xl md:text-8xl font-bold text-transparent bg-gradient-to-r from-primary via-primary/95 to-primary/85 bg-clip-text mb-4 text-balance font-sans tracking-tight drop-shadow-lg">
-              Muslims in Medicine
-            </h1>
-            <p className="text-2xl md:text-4xl text-secondary font-serif font-semibold mb-8">at Rutgers University</p>
-          </div>
+          {/* Welcome text in Charm font */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-gray-800 mb-16 tracking-wide"
+            style={{ fontFamily: "var(--font-charm)" }}
+          >
+            Welcome to Muslims in Medicine
+          </motion.h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground mb-16 max-w-4xl mx-auto text-pretty animate-fade-in-up animate-delay-400 font-serif text-opacity-90">
-            Empowering Muslim students in healthcare through connections, professional growth, guidance and support
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-20 animate-fade-in-up animate-delay-600">
+          {/* Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          >
             <Button
               asChild
               size="lg"
-              className="bg-primary hover:bg-primary/90 shadow-xl hover-lift font-sans font-semibold"
+              className="bg-primary hover:bg-primary/90 shadow-xl hover-lift font-sans font-semibold text-lg px-8 py-6"
             >
-              <Link href="/events">
-                Join Our Events <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              <Link href="/events">Join Our Events</Link>
             </Button>
             <Button
               asChild
               variant="default"
               size="lg"
-              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-xl hover-lift font-sans font-semibold"
+              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-xl hover-lift font-sans font-semibold text-lg px-8 py-6"
             >
               <Link href="/team">Meet Our Team</Link>
             </Button>
-          </div>
+          </motion.div>
         </div>
+      </section>
 
-        <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="bg-card/90 backdrop-blur-sm p-10 rounded-2xl border border-border text-center hover:shadow-2xl transition-all duration-500 hover-lift animate-fade-in-up animate-delay-300 glass-effect">
-            <div className="w-20 h-20 bg-primary/15 rounded-full flex items-center justify-center mx-auto mb-8">
-              <Users className="h-10 w-10 text-primary" />
-            </div>
-            <h3 className="text-2xl font-bold text-card-foreground mb-6 font-sans">Connections</h3>
-            <p className="text-muted-foreground text-pretty font-serif leading-relaxed">
-              Building meaningful relationships within the Muslim healthcare community, fostering lifelong professional
-              networks and friendships that support your journey in medicine.
-            </p>
-          </div>
-          <div className="bg-card/90 backdrop-blur-sm p-10 rounded-2xl border border-border text-center hover:shadow-2xl transition-all duration-500 hover-lift animate-fade-in-up animate-delay-500 glass-effect">
-            <div className="w-20 h-20 bg-secondary/15 rounded-full flex items-center justify-center mx-auto mb-8">
-              <Stethoscope className="h-10 w-10 text-secondary" />
-            </div>
-            <h3 className="text-2xl font-bold text-card-foreground mb-6 font-sans">Guidance & Support</h3>
-            <p className="text-muted-foreground text-pretty font-serif leading-relaxed">
-              Providing mentorship from experienced Muslim healthcare professionals, academic support, and emotional
-              guidance to help navigate the challenges of medical education and career development.
-            </p>
-          </div>
-          <div className="bg-card/90 backdrop-blur-sm p-10 rounded-2xl border border-border text-center hover:shadow-2xl transition-all duration-500 hover-lift animate-fade-in-up animate-delay-700 glass-effect">
-            <div className="w-20 h-20 bg-accent/15 rounded-full flex items-center justify-center mx-auto mb-8">
-              <TrendingUp className="h-10 w-10 text-accent" />
-            </div>
-            <h3 className="text-2xl font-bold text-card-foreground mb-6 font-sans">Professional Growth</h3>
-            <p className="text-muted-foreground text-pretty font-serif leading-relaxed">
-              Offering workshops, seminars, and resources focused on career advancement, skill development, and
-              leadership opportunities in healthcare fields including medicine, dentistry, pharmacy, and public health.
-            </p>
+      <section className="py-20 bg-gradient-to-br from-background via-muted/20 to-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-card/95 backdrop-blur-sm p-10 rounded-2xl border-2 border-border text-center hover:shadow-2xl transition-all duration-500 hover-lift"
+            >
+              <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-8">
+                <Users className="h-10 w-10 text-primary" />
+              </div>
+              <h3 className="text-2xl font-bold text-card-foreground mb-6 font-sans">Connections</h3>
+              <p className="text-muted-foreground text-pretty font-serif leading-relaxed">
+                Building meaningful relationships within the Muslim healthcare community, fostering lifelong
+                professional networks and friendships that support your journey in medicine.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-card/95 backdrop-blur-sm p-10 rounded-2xl border-2 border-border text-center hover:shadow-2xl transition-all duration-500 hover-lift"
+            >
+              <div className="w-20 h-20 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-8">
+                <Stethoscope className="h-10 w-10 text-secondary" />
+              </div>
+              <h3 className="text-2xl font-bold text-card-foreground mb-6 font-sans">Guidance & Support</h3>
+              <p className="text-muted-foreground text-pretty font-serif leading-relaxed">
+                Providing mentorship from experienced Muslim healthcare professionals, academic support, and emotional
+                guidance to help navigate the challenges of medical education and career development.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="bg-card/95 backdrop-blur-sm p-10 rounded-2xl border-2 border-border text-center hover:shadow-2xl transition-all duration-500 hover-lift"
+            >
+              <div className="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-8">
+                <TrendingUp className="h-10 w-10 text-accent" />
+              </div>
+              <h3 className="text-2xl font-bold text-card-foreground mb-6 font-sans">Professional Growth</h3>
+              <p className="text-muted-foreground text-pretty font-serif leading-relaxed">
+                Offering workshops, seminars, and resources focused on career advancement, skill development, and
+                leadership opportunities in healthcare fields including medicine, dentistry, pharmacy, and public
+                health.
+              </p>
+            </motion.div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }

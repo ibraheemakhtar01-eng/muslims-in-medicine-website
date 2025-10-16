@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Poppins, Dancing_Script } from "next/font/google"
+import { Inter, Poppins, Dancing_Script, Charm } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -22,6 +22,12 @@ const dancingScript = Dancing_Script({
   variable: "--font-dancing-script",
 })
 
+const charm = Charm({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-charm",
+})
+
 export const metadata: Metadata = {
   title: "Muslims in Medicine - Rutgers University",
   description: "Supporting Muslim students in healthcare fields at Rutgers University",
@@ -34,7 +40,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${poppins.variable} ${inter.variable} ${dancingScript.variable} antialiased`}>
+    <html
+      lang="en"
+      className={`${poppins.variable} ${inter.variable} ${dancingScript.variable} ${charm.variable} antialiased`}
+    >
       <body>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}

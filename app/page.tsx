@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Users, Instagram, Mail, MessageSquare, HelpCircle, Stethoscope, Activity, Microscope } from "lucide-react"
 import Image from "next/image"
+import { BackgroundPaths } from "@/components/ui/background-paths"
 
 export default function HomePage() {
   return (
@@ -137,6 +138,11 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* BackgroundPaths animation section at bottom */}
+      <section className="relative">
+        <BackgroundPaths title="Join Our Community" />
       </section>
 
       {/* Footer */}
