@@ -17,6 +17,7 @@ import {
   School,
   Microscope,
 } from "lucide-react"
+import { BackgroundPaths } from "@/components/ui/background-paths"
 
 const rutgersResources = {
   classSchedules: [
@@ -248,20 +249,16 @@ export default function ResourcesPage() {
   const [activeTab, setActiveTab] = useState("rutgers")
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background">
+    <div className="min-h-screen bg-white">
       <Navbar />
 
-      <section className="bg-gradient-to-br from-background via-muted/30 to-primary/5 py-20">
+      <section className="bg-gradient-to-br from-white via-blue-50/30 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="animate-fade-in-up [animation-delay:0.1s] opacity-0 [animation-fill-mode:forwards]">
-              <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 font-sans">Resources</h1>
-            </div>
-            <div className="animate-fade-in-up [animation-delay:0.3s] opacity-0 [animation-fill-mode:forwards]">
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty font-serif">
-                Comprehensive resources to support your journey in healthcare and medical education
-              </p>
-            </div>
+          <div className="text-center animate-fade-in-up">
+            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 font-sans">Resources</h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty font-serif">
+              Comprehensive resources to support your journey in healthcare and medical education
+            </p>
           </div>
         </div>
       </section>
@@ -721,6 +718,10 @@ export default function ResourcesPage() {
             </TabsContent>
           </Tabs>
         </div>
+      </section>
+
+      <section className="relative">
+        <BackgroundPaths title="Explore Resources" />
       </section>
     </div>
   )

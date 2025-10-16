@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/navbar"
 import { EventCard } from "@/components/event-card"
+import { BackgroundPaths } from "@/components/ui/background-paths"
 
 const allEvents = [
   {
@@ -26,11 +27,10 @@ const allEvents = [
 
 export default function EventsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background">
+    <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* Header */}
-      <section className="bg-gradient-to-br from-background via-muted/30 to-primary/5 py-20">
+      <section className="bg-gradient-to-br from-white via-blue-50/30 to-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center animate-fade-in-up">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 font-sans">Events</h1>
@@ -53,6 +53,10 @@ export default function EventsPage() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="relative">
+        <BackgroundPaths title="Stay Connected" />
       </section>
     </div>
   )

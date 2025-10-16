@@ -4,45 +4,44 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated to more balanced cream, green, and blue theme with modern gradients */
-  --background: oklch(0.98 0.008 55); /* Warmer cream background */
-  --foreground: oklch(0.18 0.025 145); /* Darker green-gray text for better contrast */
-  --card: oklch(0.96 0.012 52); /* Slightly warmer cream card background */
-  --card-foreground: oklch(0.18 0.025 145); /* Consistent dark text */
-  --popover: oklch(0.98 0.008 55);
-  --popover-foreground: oklch(0.18 0.025 145);
-  --primary: oklch(0.42 0.15 142); /* Richer forest green primary */
-  --primary-foreground: oklch(0.98 0.008 55);
-  --secondary: oklch(0.55 0.18 215); /* More vibrant blue accent */
-  --secondary-foreground: oklch(0.98 0.008 55);
-  --muted: oklch(0.94 0.015 58); /* Warmer muted background */
-  --muted-foreground: oklch(0.48 0.035 140); /* Better contrast muted text */
-  --accent: oklch(0.72 0.12 88); /* Warmer golden accent */
-  --accent-foreground: oklch(0.18 0.025 145);
+  /* Updated color scheme: white backgrounds, blue primary (replacing green) */
+  --background: oklch(1 0 0); /* Pure white background */
+  --foreground: oklch(0.2 0.02 240); /* Dark blue-gray text */
+  --card: oklch(0.99 0.002 240); /* Off-white card background */
+  --card-foreground: oklch(0.2 0.02 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.02 240);
+  --primary: oklch(0.52 0.18 235); /* Blue primary (matching watercolor) */
+  --primary-foreground: oklch(0.99 0.002 240);
+  --secondary: oklch(0.58 0.16 240); /* Lighter blue secondary */
+  --secondary-foreground: oklch(0.99 0.002 240);
+  --muted: oklch(0.96 0.005 240); /* Very light blue-gray muted */
+  --muted-foreground: oklch(0.48 0.04 240);
+  --accent: oklch(0.65 0.14 245); /* Soft blue accent */
+  --accent-foreground: oklch(0.2 0.02 240);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.86 0.025 135); /* More visible borders */
-  --input: oklch(0.98 0.008 55);
-  --ring: oklch(0.42 0.15 142 / 0.3);
-  --chart-1: oklch(0.42 0.15 142);
-  --chart-2: oklch(0.55 0.18 215);
-  --chart-3: oklch(0.72 0.12 88);
-  --chart-4: oklch(0.65 0.08 125);
-  --chart-5: oklch(0.82 0.04 130);
-  --radius: 0.75rem; /* Increased border radius for more modern look */
-  --sidebar: oklch(0.96 0.012 52);
-  --sidebar-foreground: oklch(0.18 0.025 145);
-  --sidebar-primary: oklch(0.42 0.15 142);
-  --sidebar-primary-foreground: oklch(0.98 0.008 55);
-  --sidebar-accent: oklch(0.55 0.18 215);
-  --sidebar-accent-foreground: oklch(0.98 0.008 55);
-  --sidebar-border: oklch(0.86 0.025 135);
-  --sidebar-ring: oklch(0.42 0.15 142 / 0.3);
-  /* Simplified to only 2 fonts - Poppins for headings, Inter for body */
+  --border: oklch(0.88 0.01 240); /* Light blue-gray borders */
+  --input: oklch(0.99 0.002 240);
+  --ring: oklch(0.52 0.18 235 / 0.3);
+  --chart-1: oklch(0.52 0.18 235);
+  --chart-2: oklch(0.58 0.16 240);
+  --chart-3: oklch(0.65 0.14 245);
+  --chart-4: oklch(0.48 0.12 230);
+  --chart-5: oklch(0.72 0.1 250);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.99 0.002 240);
+  --sidebar-foreground: oklch(0.2 0.02 240);
+  --sidebar-primary: oklch(0.52 0.18 235);
+  --sidebar-primary-foreground: oklch(0.99 0.002 240);
+  --sidebar-accent: oklch(0.58 0.16 240);
+  --sidebar-accent-foreground: oklch(0.99 0.002 240);
+  --sidebar-border: oklch(0.88 0.01 240);
+  --sidebar-ring: oklch(0.52 0.18 235 / 0.3);
   --font-poppins: "Poppins", sans-serif;
   --font-inter: "Inter", sans-serif;
   --font-dancing-script: "Dancing Script", cursive;
-  --font-charm: "Charm", fantasy; /* Added Charm font variable */
+  --font-charm: "Charm", fantasy;
 }
 
 .dark {

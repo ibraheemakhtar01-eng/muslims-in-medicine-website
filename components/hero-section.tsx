@@ -1,7 +1,6 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Stethoscope, Users, TrendingUp } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
@@ -9,8 +8,7 @@ import { motion } from "framer-motion"
 export function HeroSection() {
   return (
     <>
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-        {/* Blue watercolor background */}
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-white">
         <div className="absolute inset-0 z-0">
           <Image
             src="/blue-watercolor-bg.jpg"
@@ -19,20 +17,17 @@ export function HeroSection() {
             className="object-cover opacity-90"
             priority
           />
-          {/* Overlay for better text contrast */}
-          <div className="absolute inset-0 bg-gradient-to-b from-blue-50/40 via-blue-100/30 to-blue-50/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-blue-50/40 to-white/50" />
         </div>
 
-        {/* Content */}
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          {/* Bismillah Calligraphy */}
           <motion.div
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             className="mb-8 flex justify-center"
           >
-            <div className="relative w-[280px] h-[100px] sm:w-[400px] sm:h-[140px] md:w-[500px] md:h-[180px]">
+            <div className="relative w-[320px] h-[115px] sm:w-[450px] sm:h-[160px] md:w-[580px] md:h-[210px]">
               <Image
                 src="/bismillah-calligraphy.png"
                 alt="Bismillah ir-Rahman ir-Rahim"
@@ -43,7 +38,6 @@ export function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Welcome text in Charm font */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -54,7 +48,6 @@ export function HeroSection() {
             Welcome to Muslims in Medicine
           </motion.h1>
 
-          {/* Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -64,15 +57,14 @@ export function HeroSection() {
             <Button
               asChild
               size="lg"
-              className="bg-primary hover:bg-primary/90 shadow-xl hover-lift font-sans font-semibold text-lg px-8 py-6"
+              className="bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800 shadow-xl hover-lift font-sans font-semibold text-lg px-8 py-6 border border-gray-300"
             >
               <Link href="/events">Join Our Events</Link>
             </Button>
             <Button
               asChild
-              variant="default"
               size="lg"
-              className="bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-xl hover-lift font-sans font-semibold text-lg px-8 py-6"
+              className="bg-gradient-to-br from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800 shadow-xl hover-lift font-sans font-semibold text-lg px-8 py-6 border border-gray-300"
             >
               <Link href="/team">Meet Our Team</Link>
             </Button>
@@ -80,61 +72,28 @@ export function HeroSection() {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-background via-muted/20 to-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="bg-card/95 backdrop-blur-sm p-10 rounded-2xl border-2 border-border text-center hover:shadow-2xl transition-all duration-500 hover-lift"
-            >
-              <div className="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-8">
-                <Users className="h-10 w-10 text-primary" />
+      <section className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <div className="flex justify-center mb-10">
+              <div className="relative w-36 h-36 rounded-full overflow-hidden bg-white border-4 border-primary/30 shadow-2xl">
+                <Image src="/mim-logo-new.png" alt="Muslims in Medicine Logo" fill className="object-contain p-3" />
               </div>
-              <h3 className="text-2xl font-bold text-card-foreground mb-6 font-sans">Connections</h3>
-              <p className="text-muted-foreground text-pretty font-serif leading-relaxed">
-                Building meaningful relationships within the Muslim healthcare community, fostering lifelong
-                professional networks and friendships that support your journey in medicine.
-              </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-card/95 backdrop-blur-sm p-10 rounded-2xl border-2 border-border text-center hover:shadow-2xl transition-all duration-500 hover-lift"
-            >
-              <div className="w-20 h-20 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-8">
-                <Stethoscope className="h-10 w-10 text-secondary" />
-              </div>
-              <h3 className="text-2xl font-bold text-card-foreground mb-6 font-sans">Guidance & Support</h3>
-              <p className="text-muted-foreground text-pretty font-serif leading-relaxed">
-                Providing mentorship from experienced Muslim healthcare professionals, academic support, and emotional
-                guidance to help navigate the challenges of medical education and career development.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-card/95 backdrop-blur-sm p-10 rounded-2xl border-2 border-border text-center hover:shadow-2xl transition-all duration-500 hover-lift"
-            >
-              <div className="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-8">
-                <TrendingUp className="h-10 w-10 text-accent" />
-              </div>
-              <h3 className="text-2xl font-bold text-card-foreground mb-6 font-sans">Professional Growth</h3>
-              <p className="text-muted-foreground text-pretty font-serif leading-relaxed">
-                Offering workshops, seminars, and resources focused on career advancement, skill development, and
-                leadership opportunities in healthcare fields including medicine, dentistry, pharmacy, and public
-                health.
-              </p>
-            </motion.div>
-          </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-8 font-sans">Our Mission</h2>
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-serif text-pretty max-w-4xl mx-auto">
+              Empowering Muslim students in healthcare through connections, professional growth, guidance and support.
+              We create a vibrant community that bridges faith and professional aspirations, welcoming students from all
+              healthcare disciplines including pre-medicine, dentistry, pharmacy, nursing, and public health.
+            </p>
+          </motion.div>
         </div>
       </section>
     </>

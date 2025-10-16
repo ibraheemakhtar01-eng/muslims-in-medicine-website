@@ -8,19 +8,14 @@ import { BackgroundPaths } from "@/components/ui/background-paths"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background">
+    <div className="min-h-screen bg-white">
       <Navbar />
       <HeroSection />
 
       {/* About Us section - More thorough */}
-      <section className="py-20 bg-gradient-to-r from-muted/20 via-background to-muted/20">
+      <section className="py-20 bg-gradient-to-br from-white via-blue-50/30 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in-up">
-            <div className="flex justify-center mb-8">
-              <div className="relative w-28 h-28 rounded-full overflow-hidden bg-white border-4 border-primary/30 shadow-2xl">
-                <Image src="/mim-logo-new.png" alt="Muslims in Medicine Logo" fill className="object-contain p-2" />
-              </div>
-            </div>
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 font-sans">About Muslims in Medicine</h2>
             <div className="max-w-4xl mx-auto space-y-6 text-lg text-muted-foreground font-serif leading-relaxed">
               <p className="text-pretty">
@@ -38,7 +33,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            <div className="text-center p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:shadow-lg transition-all duration-300">
+            <div className="text-center p-6 bg-white backdrop-blur-sm rounded-xl border-2 border-primary/20 hover:shadow-lg transition-all duration-300">
               <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Stethoscope className="w-8 h-8 text-primary" />
               </div>
@@ -48,7 +43,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="text-center p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:shadow-lg transition-all duration-300">
+            <div className="text-center p-6 bg-white backdrop-blur-sm rounded-xl border-2 border-primary/20 hover:shadow-lg transition-all duration-300">
               <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Activity className="w-8 h-8 text-secondary" />
               </div>
@@ -58,7 +53,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="text-center p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:shadow-lg transition-all duration-300">
+            <div className="text-center p-6 bg-white backdrop-blur-sm rounded-xl border-2 border-primary/20 hover:shadow-lg transition-all duration-300">
               <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-accent" />
               </div>
@@ -68,7 +63,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="text-center p-6 bg-card/80 backdrop-blur-sm rounded-xl border border-border hover:shadow-lg transition-all duration-300">
+            <div className="text-center p-6 bg-white backdrop-blur-sm rounded-xl border-2 border-primary/20 hover:shadow-lg transition-all duration-300">
               <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Microscope className="w-8 h-8 text-primary" />
               </div>
@@ -82,7 +77,7 @@ export default function HomePage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-br from-muted/30 to-background">
+      <section className="py-20 bg-gradient-to-br from-blue-50/30 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in-up">
             <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -140,13 +135,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* BackgroundPaths animation section at bottom */}
       <section className="relative">
         <BackgroundPaths title="Join Our Community" />
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-card/80 to-muted/40 backdrop-blur-sm border-t border-border py-12">
+      <footer className="bg-gradient-to-r from-white to-blue-50/40 backdrop-blur-sm border-t border-border py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="animate-fade-in-up">
